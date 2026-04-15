@@ -3,6 +3,12 @@
    Nav, Scroll reveal, Testimonials slider, FAQ, Map
    ============================================================ */
 
+// --------------- Nav active link ---------------
+const currentPath = location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav__links a').forEach(a => {
+  if (a.getAttribute('href') === currentPath) a.classList.add('is-active');
+});
+
 // --------------- Mobile nav ---------------
 const burger = document.querySelector('.nav__burger');
 const navLinks = document.querySelector('.nav__links');
@@ -69,31 +75,42 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 const track = document.querySelector('.testimonials-track');
 const prevBtn = document.querySelector('.slider-prev');
 const nextBtn = document.querySelector('.slider-next');
-const indexEl = document.querySelector('.slider-index');
+const dotsWrap = document.querySelector('.slider-dots');
 
 if (track && prevBtn && nextBtn) {
-  const updateNav = () => {
-    const cards = track.querySelectorAll('.testimonial');
+  const cards = track.querySelectorAll('.testimonial');
+  const getStep = () => {
     const cardW = cards[0]?.offsetWidth || 300;
-    const gap = parseInt(getComputedStyle(track).gap) || 20;
-    const scrollMax = track.scrollWidth - track.clientWidth;
-    const idx = Math.round(track.scrollLeft / (cardW + gap));
-    prevBtn.disabled = track.scrollLeft <= 2;
-    nextBtn.disabled = track.scrollLeft >= scrollMax - 2;
-    if (indexEl) indexEl.textContent = (idx + 1) + ' / ' + cards.length;
+    return cardW + (parseInt(getComputedStyle(track).gap) || 20);
   };
 
-  prevBtn.addEventListener('click', () => {
-    const cardW = track.querySelector('.testimonial')?.offsetWidth || 300;
-    const gap = parseInt(getComputedStyle(track).gap) || 20;
-    track.scrollBy({ left: -(cardW + gap), behavior: 'smooth' });
-  });
-  nextBtn.addEventListener('click', () => {
-    const cardW = track.querySelector('.testimonial')?.offsetWidth || 300;
-    const gap = parseInt(getComputedStyle(track).gap) || 20;
-    track.scrollBy({ left: cardW + gap, behavior: 'smooth' });
-  });
+  // Generate dots
+  if (dotsWrap) {
+    cards.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'slider-dot' + (i === 0 ? ' is-active' : '');
+      dot.setAttribute('aria-label', 'Avis ' + (i + 1));
+      dot.addEventListener('click', () => {
+        track.scrollTo({ left: i * getStep(), behavior: 'smooth' });
+      });
+      dotsWrap.appendChild(dot);
+    });
+  }
 
+  const updateNav = () => {
+    const scrollMax = track.scrollWidth - track.clientWidth;
+    const idx = Math.round(track.scrollLeft / getStep());
+    prevBtn.disabled = track.scrollLeft <= 2;
+    nextBtn.disabled = track.scrollLeft >= scrollMax - 2;
+    if (dotsWrap) {
+      dotsWrap.querySelectorAll('.slider-dot').forEach((d, i) => {
+        d.classList.toggle('is-active', i === idx);
+      });
+    }
+  };
+
+  prevBtn.addEventListener('click', () => track.scrollBy({ left: -getStep(), behavior: 'smooth' }));
+  nextBtn.addEventListener('click', () => track.scrollBy({ left: getStep(), behavior: 'smooth' }));
   track.addEventListener('scroll', updateNav, { passive: true });
   updateNav();
 }
@@ -118,4 +135,6 @@ if (mapEl && typeof L !== 'undefined') {
     maxZoom: 19
   }).addTo(map);
   L.marker([47.3941, 0.7036]).addTo(map).bindPopup('Pole Dance Studio').openPopup();
+  setTimeout(() => map.invalidateSize(), 200);
+  window.addEventListener('resize', () => map.invalidateSize());
 }
