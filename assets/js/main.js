@@ -1,15 +1,15 @@
 /* ============================================================
    Pole Dance Studio v2 — main.js
-   Nav, Scroll reveal, Testimonials slider, FAQ, Map
+   Nav, Scroll-spy, Reveal, Reviews slider, FAQ, Map
    ============================================================ */
 
-// --------------- Nav active link ---------------
+// === Nav active link (page-based fallback for inner pages) ===
 const currentPath = location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav__links a').forEach(a => {
+document.querySelectorAll('.nav__links a[href$=".html"]').forEach(a => {
   if (a.getAttribute('href') === currentPath) a.classList.add('is-active');
 });
 
-// --------------- Mobile nav ---------------
+// === Mobile nav toggle ===
 const burger = document.querySelector('.nav__burger');
 const navLinks = document.querySelector('.nav__links');
 if (burger && navLinks) {
@@ -25,7 +25,7 @@ if (burger && navLinks) {
   });
 }
 
-// --------------- Nav shrink on scroll ---------------
+// === Nav shrink on scroll ===
 const navWrap = document.querySelector('.nav-wrap');
 if (navWrap) {
   let ticking = false;
@@ -40,28 +40,40 @@ if (navWrap) {
   }, { passive: true });
 }
 
-// --------------- Scroll reveal (IntersectionObserver) ---------------
-const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// === Scroll-spy (anchor links on home) ===
+const spySections = document.querySelectorAll('section[id]');
+const spyLinks = document.querySelectorAll('.nav__links a[href^="#"]');
+if (spySections.length && spyLinks.length) {
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        spyLinks.forEach(l => {
+          l.classList.toggle('is-active', l.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  spySections.forEach(s => spy.observe(s));
+}
 
+// === Scroll reveal (IntersectionObserver) ===
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (!prefersReduced) {
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        // Apply delay if set
         const delay = e.target.dataset.revealDelay;
-        if (delay) {
-          e.target.style.transitionDelay = delay + 'ms';
-        }
+        if (delay) e.target.style.transitionDelay = delay + 'ms';
         e.target.classList.add('is-visible');
         io.unobserve(e.target);
       }
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-
   document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
 }
 
-// --------------- FAQ accordion ---------------
+// === FAQ accordion ===
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
     const item = btn.parentElement;
@@ -71,51 +83,28 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
-// --------------- Testimonials slider ---------------
-const track = document.querySelector('.testimonials-track');
-const prevBtn = document.querySelector('.slider-prev');
-const nextBtn = document.querySelector('.slider-next');
-const dotsWrap = document.querySelector('.slider-dots');
-
+// === Reviews slider (prev/next only, no dots) ===
+const track = document.querySelector('.reviews-track');
+const prevBtn = document.querySelector('.reviews-prev');
+const nextBtn = document.querySelector('.reviews-next');
 if (track && prevBtn && nextBtn) {
-  const cards = track.querySelectorAll('.testimonial');
   const getStep = () => {
-    const cardW = cards[0]?.offsetWidth || 300;
-    return cardW + (parseInt(getComputedStyle(track).gap) || 20);
+    const card = track.querySelector('.testimonial');
+    if (!card) return 300;
+    return card.offsetWidth + (parseInt(getComputedStyle(track).gap) || 20);
   };
-
-  // Generate dots
-  if (dotsWrap) {
-    cards.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.className = 'slider-dot' + (i === 0 ? ' is-active' : '');
-      dot.setAttribute('aria-label', 'Avis ' + (i + 1));
-      dot.addEventListener('click', () => {
-        track.scrollTo({ left: i * getStep(), behavior: 'smooth' });
-      });
-      dotsWrap.appendChild(dot);
-    });
-  }
-
   const updateNav = () => {
-    const scrollMax = track.scrollWidth - track.clientWidth;
-    const idx = Math.round(track.scrollLeft / getStep());
+    const max = track.scrollWidth - track.clientWidth;
     prevBtn.disabled = track.scrollLeft <= 2;
-    nextBtn.disabled = track.scrollLeft >= scrollMax - 2;
-    if (dotsWrap) {
-      dotsWrap.querySelectorAll('.slider-dot').forEach((d, i) => {
-        d.classList.toggle('is-active', i === idx);
-      });
-    }
+    nextBtn.disabled = track.scrollLeft >= max - 2;
   };
-
   prevBtn.addEventListener('click', () => track.scrollBy({ left: -getStep(), behavior: 'smooth' }));
   nextBtn.addEventListener('click', () => track.scrollBy({ left: getStep(), behavior: 'smooth' }));
   track.addEventListener('scroll', updateNav, { passive: true });
   updateNav();
 }
 
-// --------------- Contact form stub ---------------
+// === Contact form stub ===
 const form = document.querySelector('.contact-form');
 if (form) {
   form.addEventListener('submit', e => {
@@ -127,14 +116,30 @@ if (form) {
   });
 }
 
-// --------------- Leaflet map (conditional) ---------------
+// === Map Leaflet ===
 const mapEl = document.getElementById('studio-map');
 if (mapEl && typeof L !== 'undefined') {
-  const map = L.map('studio-map', { scrollWheelZoom: false, attributionControl: false }).setView([47.3941, 0.7036], 14);
+  const COORDS = [47.3941, 0.7036];
+  const map = L.map('studio-map', {
+    scrollWheelZoom: false,
+    attributionControl: false,
+    zoomControl: true
+  }).setView(COORDS, 14);
+
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    maxZoom: 19
+    maxZoom: 19, subdomains: 'abcd'
   }).addTo(map);
-  L.marker([47.3941, 0.7036]).addTo(map).bindPopup('Pole Dance Studio').openPopup();
+
+  const markerIcon = L.divIcon({
+    className: 'studio-marker',
+    html: '<div class="studio-marker__dot"></div>',
+    iconSize: [20, 20],
+    iconAnchor: [10, 10]
+  });
+  L.marker(COORDS, { icon: markerIcon }).addTo(map)
+    .bindPopup('<strong>Pole Dance Studio</strong><br>Tours, France')
+    .openPopup();
+
   setTimeout(() => map.invalidateSize(), 200);
   window.addEventListener('resize', () => map.invalidateSize());
 }

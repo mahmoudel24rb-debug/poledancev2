@@ -14,449 +14,373 @@
 </head>
 <body>
 
-  <!-- NAV -->
-  <div class="nav-wrap">
-    <header class="nav">
-      <a class="nav__logo" href="index.html">
-        <img src="assets/images/logo-square-300.png" alt="" width="28" height="28">
-        <span>Pole Dance Studio</span>
-      </a>
-      <nav class="nav__links" id="nav-links" aria-label="Navigation principale">
-        <a href="ecole.html">L'école</a>
-        <a href="planning.html">Planning</a>
-        <a href="stages.html">Stages</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <div class="nav__cta">
-        <a class="btn btn--primary" href="planning.html">Réserver</a>
-        <button class="nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span aria-hidden="true"></span></button>
-      </div>
-    </header>
-  </div>
+<!-- SVG sprite (divider icon) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="sd" viewBox="0 0 36 36">
+    <circle cx="18" cy="18" r="7" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <circle cx="18" cy="18" r="2" fill="currentColor"/>
+    <line x1="18" y1="2" x2="18" y2="9" stroke="currentColor" stroke-width="1" opacity=".5"/>
+    <line x1="18" y1="27" x2="18" y2="34" stroke="currentColor" stroke-width="1" opacity=".5"/>
+    <line x1="2" y1="18" x2="9" y2="18" stroke="currentColor" stroke-width="1" opacity=".5"/>
+    <line x1="27" y1="18" x2="34" y2="18" stroke="currentColor" stroke-width="1" opacity=".5"/>
+  </symbol>
+</svg>
 
-  <!-- ===================== HERO ===================== -->
-  <section class="hero">
-    <div class="hero__badge" data-reveal="fade-up">
-      <div class="stars">
-        <span>★★★★★</span>
-        <span>4.9/5 — avis élèves</span>
-      </div>
+<!-- NAV -->
+<div class="nav-wrap">
+  <header class="nav">
+    <a class="nav__logo" href="index.html">
+      <img src="assets/images/logo-square-300.png" alt="" width="28" height="28">
+      <span>Pole Dance Studio</span>
+    </a>
+    <nav class="nav__links" id="nav-links" aria-label="Navigation principale">
+      <a href="#instructors">Coach</a>
+      <a href="#classes">Cours</a>
+      <a href="#schedule">Planning</a>
+      <a href="#pricing">Tarifs</a>
+      <a href="#reviews">Avis</a>
+      <a href="#studio">Studio</a>
+      <a href="#location">Nous trouver</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav__cta">
+      <a class="btn btn--primary" href="planning.html">Réserver</a>
+      <button class="nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span aria-hidden="true"></span></button>
     </div>
-    <h1 data-reveal="fade-up" data-reveal-delay="80">Studio de pole dance pour <em>le corps &amp; l'esprit</em></h1>
-    <p class="hero__lead" data-reveal="fade-up" data-reveal-delay="160">Be strong, have fun. Rejoins notre studio et découvre une activité qui allie force, grâce et confiance en soi.</p>
-    <div data-reveal="fade-up" data-reveal-delay="240">
+  </header>
+</div>
+
+<!-- ======================== HERO ======================== -->
+<section class="hero">
+  <div class="hero__badge" data-reveal="fade-up">
+    <div class="stars">
+      <span class="stars-icons">★★★★★</span>
+      <span class="stars-text">4.9/5 — avis élèves</span>
+    </div>
+  </div>
+  <h1 data-reveal="fade-up" data-reveal-delay="100">Studio de pole dance pour <em>le corps &amp; l'esprit</em></h1>
+  <p class="hero__lead" data-reveal="fade-up" data-reveal-delay="200">Be strong, have fun. Rejoins notre studio et découvre une activité qui allie force, grâce et confiance en soi.</p>
+  <div data-reveal="fade-up" data-reveal-delay="300">
+    <a class="btn btn--primary" href="planning.html">Réserver un cours</a>
+  </div>
+  <div class="hero__images">
+    <div class="hero__img hero__img--left" data-reveal="fade-up" data-reveal-delay="400">
+      <img src="assets/images/amandine-portrait-ecole.jpg" alt="Amandine Janinet" width="280" height="350" fetchpriority="high" decoding="async">
+    </div>
+    <div class="hero__img hero__img--center" data-reveal="fade-up" data-reveal-delay="500">
+      <img src="assets/images/home-cours-pole-dance.jpg" alt="Cours de pole dance en groupe" width="480" height="300" fetchpriority="high" decoding="async">
+    </div>
+    <div class="hero__img hero__img--right" data-reveal="fade-up" data-reveal-delay="600">
+      <img src="assets/images/studio-parc-beauregard.jpg" alt="Le studio" width="280" height="350" fetchpriority="high" decoding="async">
+    </div>
+  </div>
+</section>
+
+<!-- divider -->
+<div class="section-divider" data-reveal="scale-in"><svg><use href="#sd"/></svg></div>
+
+<!-- ======================== INSTRUCTORS ======================== -->
+<section id="instructors">
+  <div class="container">
+    <div class="section-head">
+      <h2 data-reveal="fade-up">Rencontrez <em>notre approche</em></h2>
+      <p data-reveal="fade-up" data-reveal-delay="80">Une coach passionnée, une discipline complète, un studio dédié.</p>
+    </div>
+    <div class="instructors">
+      <article class="instructor-card" data-reveal="fade-up">
+        <div class="instructor-card__img"><img src="assets/images/amandine-portrait-ecole.jpg" alt="Amandine Janinet" width="480" height="600" loading="lazy" decoding="async"></div>
+        <div class="instructor-card__body">
+          <h5>Amandine Janinet</h5>
+          <span class="tagline">Fondatrice &amp; coach — BPJEPS, Doris Arnold, Pilates, Yoga</span>
+        </div>
+      </article>
+      <article class="instructor-card" data-reveal="fade-up" data-reveal-delay="80">
+        <div class="instructor-card__img"><img src="assets/images/home-cours-pole-dance.jpg" alt="Cours en groupe" width="480" height="600" loading="lazy" decoding="async"></div>
+        <div class="instructor-card__body">
+          <h5>Vous, dans 6 mois</h5>
+          <span class="tagline">Force, souplesse, confiance — on y arrive ensemble</span>
+        </div>
+      </article>
+      <article class="instructor-card" data-reveal="fade-up" data-reveal-delay="160">
+        <div class="instructor-card__img"><img src="assets/images/studio-parc-beauregard.jpg" alt="Le studio" width="480" height="600" loading="lazy" decoding="async"></div>
+        <div class="instructor-card__body">
+          <h5>L'esprit du studio</h5>
+          <span class="tagline">10 élèves max, ambiance famille, bienveillance</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- divider -->
+<div class="section-divider" data-reveal="scale-in"><svg><use href="#sd"/></svg></div>
+
+<!-- ======================== CLASSES ======================== -->
+<section id="classes">
+  <div class="container">
+    <div class="section-head">
+      <h2 data-reveal="fade-up">Types de <em>cours</em></h2>
+      <p data-reveal="fade-up" data-reveal-delay="80">Choisis le cours adapté à ton niveau.</p>
+    </div>
+    <div class="classes-grid">
+      <article class="class-card" data-reveal="fade-up">
+        <div class="class-card__img"><img src="assets/images/home-cours-pole-dance.jpg" alt="" width="480" height="480" loading="lazy" decoding="async"></div>
+        <div class="class-card__body"><h3>Débutants 1</h3><p>Figures et transitions de base, aucun prérequis.</p></div>
+      </article>
+      <article class="class-card class-card--reverse" data-reveal="fade-up" data-reveal-delay="80">
+        <div class="class-card__img"><img src="assets/images/amandine-portrait-home.jpg" alt="" width="480" height="480" loading="lazy" decoding="async"></div>
+        <div class="class-card__body"><h3>Débutants 2</h3><p>Figures inversées et mode spinning.</p></div>
+      </article>
+      <article class="class-card" data-reveal="fade-up" data-reveal-delay="160">
+        <div class="class-card__img"><img src="assets/images/amandine-portrait-ecole.jpg" alt="" width="480" height="480" loading="lazy" decoding="async"></div>
+        <div class="class-card__body"><h3>Inter 1 / 2</h3><p>Shoulder mount, ayesha, jade et transitions techniques.</p></div>
+      </article>
+      <article class="class-card class-card--reverse" data-reveal="fade-up" data-reveal-delay="240">
+        <div class="class-card__img"><img src="assets/images/studio-parc-beauregard.jpg" alt="" width="480" height="480" loading="lazy" decoding="async"></div>
+        <div class="class-card__body"><h3>Tous niveaux</h3><p>Format ouvert, idéal pour progresser ensemble.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- divider -->
+<div class="section-divider" data-reveal="scale-in"><svg><use href="#sd"/></svg></div>
+
+<!-- ======================== SCHEDULE ======================== -->
+<section id="schedule">
+  <div class="container">
+    <div class="section-head">
+      <h2 data-reveal="fade-up">Planning des <em>cours</em></h2>
+      <p data-reveal="fade-up" data-reveal-delay="80">Réservation en ligne, 10 places max par cours.</p>
+    </div>
+    <div class="schedule">
+      <div class="schedule__day" data-reveal="fade-up">
+        <h3 class="schedule__day-title">Lundi</h3>
+        <div class="schedule__row"><span class="schedule__time">18h00</span><span class="schedule__duration">75 min</span><span class="schedule__class">Pole dance tous niveaux</span><span class="schedule__coach">Amandine</span></div>
+        <div class="schedule__row"><span class="schedule__time">19h30</span><span class="schedule__duration">75 min</span><span class="schedule__class">Pole dance débutant 1 &amp; 2</span><span class="schedule__coach">Amandine</span></div>
+      </div>
+      <div class="schedule__day" data-reveal="fade-up" data-reveal-delay="60">
+        <h3 class="schedule__day-title">Mercredi</h3>
+        <div class="schedule__row"><span class="schedule__time">18h00</span><span class="schedule__duration">75 min</span><span class="schedule__class">Pole dance débutant 1 &amp; 2</span><span class="schedule__coach">Amandine</span></div>
+        <div class="schedule__row"><span class="schedule__time">19h30</span><span class="schedule__duration">75 min</span><span class="schedule__class">Pole dance intermédiaire</span><span class="schedule__coach">Amandine</span></div>
+      </div>
+      <div class="schedule__day" data-reveal="fade-up" data-reveal-delay="120">
+        <h3 class="schedule__day-title">Vendredi</h3>
+        <div class="schedule__row"><span class="schedule__time">19h30</span><span class="schedule__duration">75 min</span><span class="schedule__class">Pole dance tous niveaux</span><span class="schedule__coach">Amandine</span></div>
+      </div>
+      <p style="font-size:13px;color:var(--text-dim);margin-top:12px;" data-reveal="fade-in">Samedi / dimanche : événement privé, anniversaire, EVJF/EVG…</p>
+    </div>
+    <div style="text-align:center;margin-top:36px;" data-reveal="fade-up">
       <a class="btn btn--primary" href="planning.html">Réserver un cours</a>
     </div>
-    <div class="hero__images">
-      <div class="hero__img hero__img--left" data-reveal="fade-up" data-reveal-delay="300">
-        <img src="assets/images/home-cours-pole-dance.jpg" alt="Cours de pole dance en groupe" width="480" height="600" fetchpriority="high" decoding="async">
-      </div>
-      <div class="hero__img hero__img--center" data-reveal="fade-up" data-reveal-delay="400">
-        <img src="assets/images/amandine-portrait-ecole.jpg" alt="Amandine Janinet" width="480" height="600" fetchpriority="high" decoding="async">
-      </div>
-      <div class="hero__img hero__img--right" data-reveal="fade-up" data-reveal-delay="500">
-        <img src="assets/images/studio-parc-beauregard.jpg" alt="Le studio" width="480" height="600" fetchpriority="high" decoding="async">
-      </div>
-    </div>
-  </section>
-
-  <!-- DIVIDER -->
-  <div class="section-divider" data-reveal="scale-in">
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="8" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="20" r="2.5" fill="currentColor"/><line x1="20" y1="2" x2="20" y2="10" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="20" y1="30" x2="20" y2="38" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="2" y1="20" x2="10" y2="20" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="30" y1="20" x2="38" y2="20" stroke="currentColor" stroke-width="1" opacity=".5"/></svg>
   </div>
+</section>
 
-  <!-- ===================== INSTRUCTORS ===================== -->
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow" data-reveal="fade-up"><span class="dot" aria-hidden="true"></span> Notre univers</span>
-        <h2 data-reveal="fade-up" data-reveal-delay="80">Ce qui fait notre <em>signature</em></h2>
-        <p data-reveal="fade-up" data-reveal-delay="160">Une coach passionnée, une discipline complète, un studio dédié.</p>
-      </div>
-      <div class="instructors">
-        <article class="instructor-card" data-reveal="fade-up" data-reveal-delay="0">
-          <div class="instructor-card__img"><img src="assets/images/amandine-portrait-ecole.jpg" alt="Amandine Janinet" width="480" height="600" loading="lazy" decoding="async"></div>
-          <div class="instructor-card__body">
-            <h3>Amandine Janinet</h3>
-            <span class="role">Fondatrice &amp; coach</span>
-          </div>
-        </article>
-        <article class="instructor-card" data-reveal="fade-up" data-reveal-delay="80">
-          <div class="instructor-card__img"><img src="assets/images/home-cours-pole-dance.jpg" alt="Cours en groupe" width="480" height="600" loading="lazy" decoding="async"></div>
-          <div class="instructor-card__body">
-            <h3>Pole dance</h3>
-            <span class="role">Débutant → avancé</span>
-          </div>
-        </article>
-        <article class="instructor-card" data-reveal="fade-up" data-reveal-delay="160">
-          <div class="instructor-card__img"><img src="assets/images/studio-parc-beauregard.jpg" alt="Le studio" width="480" height="600" loading="lazy" decoding="async"></div>
-          <div class="instructor-card__body">
-            <h3>Le studio</h3>
-            <span class="role">5 barres X-Pole Pro</span>
-          </div>
-        </article>
-      </div>
+<!-- divider -->
+<div class="section-divider" data-reveal="scale-in"><svg><use href="#sd"/></svg></div>
+
+<!-- ======================== PRICING ======================== -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-head">
+      <h2 data-reveal="fade-up">Nos <em>formules</em></h2>
+      <p data-reveal="fade-up" data-reveal-delay="80">Des abonnements adaptés à ton rythme.</p>
     </div>
-  </section>
-
-  <!-- DIVIDER -->
-  <div class="section-divider" data-reveal="scale-in">
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="8" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="20" r="2.5" fill="currentColor"/><line x1="20" y1="2" x2="20" y2="10" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="20" y1="30" x2="20" y2="38" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="2" y1="20" x2="10" y2="20" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="30" y1="20" x2="38" y2="20" stroke="currentColor" stroke-width="1" opacity=".5"/></svg>
+    <div class="pricing-grid">
+      <article class="price-card" data-reveal="fade-up">
+        <span class="price-card__label">Découverte</span>
+        <h3>Mon premier cours</h3>
+        <div class="price-card__price">15 €</div>
+        <p>Valable une seule fois. Le meilleur moyen de tester.</p>
+      </article>
+      <article class="price-card price-card--featured" data-reveal="fade-up" data-reveal-delay="60">
+        <div class="price-card__icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M16 2l4.5 9.2L30 12.8l-7 6.8L24.6 29 16 24.2 7.4 29l1.6-9.4-7-6.8 9.5-1.6z" fill="currentColor"/></svg></div>
+        <span class="price-card__badge">Le + populaire</span>
+        <span class="price-card__label">Abonnement</span>
+        <h3>1 cours / semaine</h3>
+        <div class="price-card__price">60 €<small>/mois</small></div>
+        <p>Engagement 1 an. La formule la plus choisie.</p>
+      </article>
+      <article class="price-card" data-reveal="fade-up" data-reveal-delay="120">
+        <span class="price-card__label">Abonnement</span>
+        <h3>2 cours / semaine</h3>
+        <div class="price-card__price">100 €<small>/mois</small></div>
+        <p>Engagement 1 an. Pour accélérer ta progression.</p>
+      </article>
+    </div>
+    <p style="text-align:center;margin-top:24px;font-size:13px;color:var(--text-dim);" data-reveal="fade-in">Cartes : 25 € (1 cours) · 200 € (10 cours) · 380 € (20 cours) — 1 cours = 2 crédits.</p>
+    <div style="text-align:center;margin-top:28px;" data-reveal="fade-up">
+      <a class="btn btn--primary" href="planning.html">Réserver un cours</a>
+    </div>
   </div>
+</section>
 
-  <!-- ===================== CLASS TYPES ===================== -->
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow" data-reveal="fade-up"><span class="dot" aria-hidden="true"></span> Nos cours</span>
-        <h2 data-reveal="fade-up" data-reveal-delay="80">Types de <em>cours</em></h2>
-        <p data-reveal="fade-up" data-reveal-delay="160">Choisis le cours adapté à ton niveau.</p>
+<!-- divider -->
+<div class="section-divider" data-reveal="scale-in"><svg><use href="#sd"/></svg></div>
+
+<!-- ======================== REVIEWS ======================== -->
+<section id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <h2 data-reveal="fade-up">Ce qu'elles en <em>disent</em></h2>
+    </div>
+    <div class="reviews-wrap" data-reveal="fade-up" aria-roledescription="carousel" aria-label="Témoignages">
+      <div class="reviews-track">
+        <article class="testimonial">
+          <div class="testimonial__stars" aria-hidden="true">★★★★★</div>
+          <p class="testimonial__quote">« J'ai redécouvert la joie de refaire du sport avec Amandine. La pole dance m'a permis de re-découvrir mon rapport au corps et de prendre confiance. Le plus beau moment de ma semaine ! »</p>
+          <div class="testimonial__author"><div class="testimonial__avatar">L</div><div><div class="testimonial__name">Laure-Anne Lefevre</div><div class="testimonial__role">Élève</div></div></div>
+        </article>
+        <article class="testimonial">
+          <div class="testimonial__stars" aria-hidden="true">★★★★★</div>
+          <p class="testimonial__quote">« Les stages avec Amandine sont riches en contenu et en dynamique de groupe. Sur 4 jours intenses on apprend à se connaître, s'accompagner, se motiver. Capacité à se dépasser garantie. »</p>
+          <div class="testimonial__author"><div class="testimonial__avatar">V</div><div><div class="testimonial__name">Vanessa Pingard</div><div class="testimonial__role">Stagiaire</div></div></div>
+        </article>
+        <article class="testimonial">
+          <div class="testimonial__stars" aria-hidden="true">★★★★★</div>
+          <p class="testimonial__quote">« Une superbe aventure hors du temps. Amandine est passionnée, rigoureuse et polyvalente. Elle nous transporte de la pole flow à l'exotique en passant par le yoga avec professionnalisme. »</p>
+          <div class="testimonial__author"><div class="testimonial__avatar">S</div><div><div class="testimonial__name">Sabrina Gautier</div><div class="testimonial__role">Stagiaire</div></div></div>
+        </article>
+        <article class="testimonial">
+          <div class="testimonial__stars" aria-hidden="true">★★★★★</div>
+          <p class="testimonial__quote">« Coach diplômée, Amandine sait mettre à l'aise et guider avec pédagogie et bonne humeur. C'est toujours une joie de pratiquer dans un cadre naturel. »</p>
+          <div class="testimonial__author"><div class="testimonial__avatar">A</div><div><div class="testimonial__name">Avis élève</div><div class="testimonial__role">Élève</div></div></div>
+        </article>
       </div>
-      <div class="classes-grid">
-        <article class="class-card" data-reveal="fade-up" data-reveal-delay="0">
-          <div class="class-card__img"><img src="assets/images/home-cours-pole-dance.jpg" alt="" width="480" height="480" loading="lazy" decoding="async"></div>
-          <div class="class-card__body">
-            <h3>Débutants 1</h3>
-            <p>Figures et transitions de base, aucun prérequis.</p>
-          </div>
-        </article>
-        <article class="class-card" data-reveal="fade-up" data-reveal-delay="60">
-          <div class="class-card__img"><img src="assets/images/amandine-portrait-home.jpg" alt="" width="480" height="480" loading="lazy" decoding="async"></div>
-          <div class="class-card__body">
-            <h3>Débutants 2</h3>
-            <p>Figures inversées et mode spinning.</p>
-          </div>
-        </article>
-        <article class="class-card" data-reveal="fade-up" data-reveal-delay="120">
-          <div class="class-card__img"><img src="assets/images/amandine-portrait-ecole.jpg" alt="" width="480" height="480" loading="lazy" decoding="async"></div>
-          <div class="class-card__body">
-            <h3>Inter 1 / 2</h3>
-            <p>Shoulder mount, ayesha, jade et transitions techniques.</p>
-          </div>
-        </article>
-        <article class="class-card" data-reveal="fade-up" data-reveal-delay="180">
-          <div class="class-card__img"><img src="assets/images/studio-parc-beauregard.jpg" alt="" width="480" height="480" loading="lazy" decoding="async"></div>
-          <div class="class-card__body">
-            <h3>Tous niveaux</h3>
-            <p>Format ouvert, idéal pour progresser ensemble.</p>
-          </div>
-        </article>
+      <div class="reviews-nav">
+        <button class="reviews-prev" aria-label="Précédent">←</button>
+        <button class="reviews-next" aria-label="Suivant">→</button>
       </div>
     </div>
-  </section>
-
-  <!-- DIVIDER -->
-  <div class="section-divider" data-reveal="scale-in">
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="8" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="20" r="2.5" fill="currentColor"/><line x1="20" y1="2" x2="20" y2="10" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="20" y1="30" x2="20" y2="38" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="2" y1="20" x2="10" y2="20" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="30" y1="20" x2="38" y2="20" stroke="currentColor" stroke-width="1" opacity=".5"/></svg>
   </div>
+</section>
 
-  <!-- ===================== SCHEDULE ===================== -->
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow" data-reveal="fade-up"><span class="dot" aria-hidden="true"></span> Planning</span>
-        <h2 data-reveal="fade-up" data-reveal-delay="80">Planning des <em>cours</em></h2>
-        <p data-reveal="fade-up" data-reveal-delay="160">Réservation en ligne, 10 places max par cours.</p>
+<!-- divider -->
+<div class="section-divider" data-reveal="scale-in"><svg><use href="#sd"/></svg></div>
+
+<!-- ======================== STUDIO ======================== -->
+<section id="studio">
+  <div class="container">
+    <div class="section-head">
+      <h2 data-reveal="fade-up">Notre <em>studio</em></h2>
+      <p data-reveal="fade-up" data-reveal-delay="80">Un cadre accueillant conçu pour la pratique de la pole dance.</p>
+    </div>
+    <div class="studio-features">
+      <div class="studio-feature" data-reveal="fade-up">
+        <div class="studio-feature__icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="4" stroke="currentColor" stroke-width="1.5"/><line x1="22" y1="10" x2="22" y2="34" stroke="currentColor" stroke-width="1" opacity=".5"/><circle cx="22" cy="6" r="3" stroke="currentColor" stroke-width="1.5"/></svg></div>
+        <h3>Espace lumineux</h3>
+        <p>3m15 de hauteur sous plafond, tapis, vestiaires et douche.</p>
       </div>
-      <div class="schedule">
-        <div data-reveal="fade-up" data-reveal-delay="0">
-          <h3 class="schedule__day-title">Lundi</h3>
-          <table class="schedule-table">
-            <thead><tr><th>Heure</th><th>Durée</th><th>Cours</th><th>Coach</th></tr></thead>
-            <tbody>
-              <tr>
-                <td class="schedule__time">18h00</td>
-                <td class="schedule__duration">75 min</td>
-                <td class="schedule__class"><span class="class-name">Pole dance tous niveaux</span></td>
-                <td class="schedule__coach">Amandine</td>
-              </tr>
-              <tr>
-                <td class="schedule__time">19h30</td>
-                <td class="schedule__duration">75 min</td>
-                <td class="schedule__class"><span class="class-name">Pole dance débutant 1 &amp; 2</span></td>
-                <td class="schedule__coach">Amandine</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div data-reveal="fade-up" data-reveal-delay="80">
-          <h3 class="schedule__day-title">Mercredi</h3>
-          <table class="schedule-table">
-            <tbody>
-              <tr>
-                <td class="schedule__time">18h00</td>
-                <td class="schedule__duration">75 min</td>
-                <td class="schedule__class"><span class="class-name">Pole dance débutant 1 &amp; 2</span></td>
-                <td class="schedule__coach">Amandine</td>
-              </tr>
-              <tr>
-                <td class="schedule__time">19h30</td>
-                <td class="schedule__duration">75 min</td>
-                <td class="schedule__class"><span class="class-name">Pole dance intermédiaire</span></td>
-                <td class="schedule__coach">Amandine</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div data-reveal="fade-up" data-reveal-delay="160">
-          <h3 class="schedule__day-title">Vendredi</h3>
-          <table class="schedule-table">
-            <tbody>
-              <tr>
-                <td class="schedule__time">19h30</td>
-                <td class="schedule__duration">75 min</td>
-                <td class="schedule__class"><span class="class-name">Pole dance tous niveaux</span></td>
-                <td class="schedule__coach">Amandine</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p style="font-size:13px; color:var(--text-dim); margin-top:8px;" data-reveal="fade-in">Samedi / dimanche : événement privé, anniversaire, EVJF/EVG…</p>
+      <div class="studio-feature" data-reveal="fade-up" data-reveal-delay="60">
+        <div class="studio-feature__icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none"><line x1="22" y1="4" x2="22" y2="40" stroke="currentColor" stroke-width="2"/><circle cx="22" cy="18" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M16 30 l6-4 6 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></div>
+        <h3>5 barres X-Pole Pro</h3>
+        <p>Chrome + Powder Coated, système X-lock statique/spinning.</p>
       </div>
-      <div style="text-align:center; margin-top:28px;" data-reveal="fade-up">
-        <a class="btn btn--primary" href="planning.html">Réserver un cours</a>
+      <div class="studio-feature" data-reveal="fade-up" data-reveal-delay="120">
+        <div class="studio-feature__icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none"><circle cx="22" cy="14" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M10 36c0-6.6 5.4-12 12-12s12 5.4 12 12" stroke="currentColor" stroke-width="1.5"/></svg></div>
+        <h3>10 élèves max</h3>
+        <p>Suivi personnalisé dans une ambiance conviviale.</p>
       </div>
     </div>
-  </section>
-
-  <!-- DIVIDER -->
-  <div class="section-divider" data-reveal="scale-in">
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="8" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="20" r="2.5" fill="currentColor"/><line x1="20" y1="2" x2="20" y2="10" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="20" y1="30" x2="20" y2="38" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="2" y1="20" x2="10" y2="20" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="30" y1="20" x2="38" y2="20" stroke="currentColor" stroke-width="1" opacity=".5"/></svg>
+    <div class="studio-gallery" data-reveal="fade-up">
+      <div class="studio-gallery__img studio-gallery__img--portrait"><img src="assets/images/amandine-portrait-ecole.jpg" alt="Amandine au studio" width="280" height="350" loading="lazy" decoding="async"></div>
+      <div class="studio-gallery__img studio-gallery__img--landscape"><img src="assets/images/studio-parc-beauregard.jpg" alt="Le studio" width="480" height="300" loading="lazy" decoding="async"></div>
+      <div class="studio-gallery__img studio-gallery__img--portrait"><img src="assets/images/amandine-portrait-home.jpg" alt="Pole en extérieur" width="280" height="350" loading="lazy" decoding="async"></div>
+      <div class="studio-gallery__img studio-gallery__img--landscape"><img src="assets/images/home-cours-pole-dance.jpg" alt="Cours en groupe" width="480" height="300" loading="lazy" decoding="async"></div>
+      <div class="studio-gallery__img studio-gallery__img--portrait"><img src="assets/images/personal-trainer-illustration.png" alt="Illustration" width="280" height="350" loading="lazy" decoding="async"></div>
+    </div>
   </div>
+</section>
 
-  <!-- ===================== PRICING ===================== -->
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow" data-reveal="fade-up"><span class="dot" aria-hidden="true"></span> Tarifs</span>
-        <h2 data-reveal="fade-up" data-reveal-delay="80">Nos <em>formules</em></h2>
-        <p data-reveal="fade-up" data-reveal-delay="160">Des abonnements adaptés à ton rythme.</p>
-      </div>
-      <div class="pricing-grid">
-        <article class="price-card" data-reveal="fade-up">
-          <span class="price-card__label">Découverte</span>
-          <h3>Mon premier cours</h3>
-          <div class="price-card__price">15 €</div>
-          <p>Valable une seule fois. Le meilleur moyen de tester.</p>
-          <a class="btn btn--ghost" href="planning.html">Réserver</a>
-        </article>
-        <article class="price-card price-card--featured" data-reveal="fade-up" data-reveal-delay="60">
-          <div class="price-card__icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 2l4.5 9.2L30 12.8l-7 6.8L24.6 29 16 24.2 7.4 29l1.6-9.4-7-6.8 9.5-1.6z" fill="currentColor"/></svg></div>
-          <span class="price-card__badge">Le + populaire</span>
-          <span class="price-card__label">Abonnement</span>
-          <h3>1 cours / semaine</h3>
-          <div class="price-card__price">60 €<small>/mois</small></div>
-          <p>Engagement 1 an. La formule la plus choisie.</p>
-          <a class="btn btn--primary" href="planning.html">Réserver</a>
-        </article>
-        <article class="price-card" data-reveal="fade-up" data-reveal-delay="120">
-          <span class="price-card__label">Abonnement</span>
-          <h3>2 cours / semaine</h3>
-          <div class="price-card__price">100 €<small>/mois</small></div>
-          <p>Engagement 1 an. Pour accélérer ta progression.</p>
-          <a class="btn btn--ghost" href="planning.html">Réserver</a>
-        </article>
-      </div>
-      <p style="text-align:center; margin-top:20px; font-size:13px; color:var(--text-dim);" data-reveal="fade-in">Cartes : 25 € (1 cours) · 200 € (10 cours) · 380 € (20 cours) — 1 cours = 2 crédits.</p>
+<!-- divider -->
+<div class="section-divider" data-reveal="scale-in"><svg><use href="#sd"/></svg></div>
+
+<!-- ======================== LOCATION ======================== -->
+<section id="location">
+  <div class="container">
+    <div class="location-head" data-reveal="fade-up">
+      <h2>Venez nous <em>rencontrer</em></h2>
+      <p>Notre studio vous accueille dans un espace lumineux et dédié à la pratique.</p>
+      <p class="address">Tours, France <span style="opacity:.5;">— adresse complète sur demande</span></p>
     </div>
-  </section>
-
-  <!-- DIVIDER -->
-  <div class="section-divider" data-reveal="scale-in">
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="8" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="20" r="2.5" fill="currentColor"/><line x1="20" y1="2" x2="20" y2="10" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="20" y1="30" x2="20" y2="38" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="2" y1="20" x2="10" y2="20" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="30" y1="20" x2="38" y2="20" stroke="currentColor" stroke-width="1" opacity=".5"/></svg>
+    <div class="location-map" data-reveal="fade-up" data-reveal-delay="200">
+      <div id="studio-map"></div>
+    </div>
+    <div style="text-align:center;margin-top:28px;" data-reveal="fade-up">
+      <a class="btn btn--primary" href="contact.html">Nous contacter</a>
+    </div>
   </div>
+</section>
 
-  <!-- ===================== TESTIMONIALS ===================== -->
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow" data-reveal="fade-up"><span class="dot" aria-hidden="true"></span> Avis</span>
-        <h2 data-reveal="fade-up" data-reveal-delay="80">Ce qu'elles en <em>disent</em></h2>
+<!-- divider -->
+<div class="section-divider" data-reveal="scale-in"><svg><use href="#sd"/></svg></div>
+
+<!-- ======================== FAQ ======================== -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <h2 data-reveal="fade-up">Questions <em>fréquentes</em></h2>
+    </div>
+    <div class="faq-list" data-reveal="fade-up">
+      <div class="faq-item">
+        <button class="faq-q">Est-ce que la pole dance est accessible aux débutant·es ?</button>
+        <div class="faq-a"><p>Absolument. Aucun prérequis nécessaire. Pas besoin d'être souple, forte ou sportive. On apprend et on progresse à son propre rythme.</p></div>
       </div>
-      <div class="testimonials-wrap" data-reveal="fade-up" aria-roledescription="carousel" aria-label="Témoignages">
-        <div class="testimonials-track" aria-live="polite">
-          <article class="testimonial">
-            <div class="testimonial__stars" aria-hidden="true">★★★★★</div>
-            <p class="testimonial__quote">« J'ai redécouvert la joie de refaire du sport avec Amandine. La pole dance m'a permis de re-découvrir mon rapport au corps et de prendre confiance. Le plus beau moment de ma semaine ! »</p>
-            <div class="testimonial__author"><div class="testimonial__avatar">L</div><div><div class="testimonial__name">Laure-Anne Lefevre</div><div class="testimonial__role">Élève</div></div></div>
-          </article>
-          <article class="testimonial">
-            <div class="testimonial__stars" aria-hidden="true">★★★★★</div>
-            <p class="testimonial__quote">« Les stages avec Amandine sont riches en contenu et en dynamique de groupe. Sur 4 jours intenses on apprend à se connaître, s'accompagner, se motiver. Capacité à nous dépasser garantie. »</p>
-            <div class="testimonial__author"><div class="testimonial__avatar">V</div><div><div class="testimonial__name">Vanessa Pingard</div><div class="testimonial__role">Stagiaire</div></div></div>
-          </article>
-          <article class="testimonial">
-            <div class="testimonial__stars" aria-hidden="true">★★★★★</div>
-            <p class="testimonial__quote">« Une superbe aventure hors du temps. Amandine est passionnée, rigoureuse et polyvalente. Elle nous transporte de la pole flow à l'exotique en passant par le yoga avec professionnalisme. »</p>
-            <div class="testimonial__author"><div class="testimonial__avatar">S</div><div><div class="testimonial__name">Sabrina Gautier</div><div class="testimonial__role">Stagiaire</div></div></div>
-          </article>
-          <article class="testimonial">
-            <div class="testimonial__stars" aria-hidden="true">★★★★★</div>
-            <p class="testimonial__quote">« Coach diplômée, Amandine sait mettre à l'aise et guider avec une pédagogie et une bonne humeur garantie. C'est toujours une joie de pratiquer dans un cadre naturel. »</p>
-            <div class="testimonial__author"><div class="testimonial__avatar">A</div><div><div class="testimonial__name">Avis élève</div><div class="testimonial__role">Élève</div></div></div>
-          </article>
-        </div>
-        <div class="testimonials-nav">
-          <button class="slider-prev" aria-label="Précédent">←</button>
-          <div class="slider-dots"></div>
-          <button class="slider-next" aria-label="Suivant">→</button>
-        </div>
+      <div class="faq-item">
+        <button class="faq-q">Combien de personnes par cours ?</button>
+        <div class="faq-a"><p>Maximum 10 personnes pour garantir un vrai suivi personnalisé avec Amandine.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Comment réserver un cours ?</button>
+        <div class="faq-a"><p>Via notre plateforme de réservation en ligne. Crée un compte, choisis ton créneau et règle en ligne. Annulations 24h à l'avance.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Quels sont les bienfaits de la pole dance ?</button>
+        <div class="faq-a"><p>Confiance en soi, force, souplesse, endurance et coordination. Un mélange unique de danse, cirque et gymnastique — on se dépense en s'amusant.</p></div>
       </div>
     </div>
-  </section>
-
-  <!-- DIVIDER -->
-  <div class="section-divider" data-reveal="scale-in">
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="8" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="20" r="2.5" fill="currentColor"/><line x1="20" y1="2" x2="20" y2="10" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="20" y1="30" x2="20" y2="38" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="2" y1="20" x2="10" y2="20" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="30" y1="20" x2="38" y2="20" stroke="currentColor" stroke-width="1" opacity=".5"/></svg>
   </div>
+</section>
 
-  <!-- ===================== STUDIO ===================== -->
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow" data-reveal="fade-up"><span class="dot" aria-hidden="true"></span> Le studio</span>
-        <h2 data-reveal="fade-up" data-reveal-delay="80">Un espace <em>dédié</em></h2>
-        <p data-reveal="fade-up" data-reveal-delay="160">Un cadre accueillant conçu pour la pratique de la pole dance.</p>
+<!-- ======================== FOOTER ======================== -->
+<footer class="site-footer" data-reveal="fade-in">
+  <div class="footer-grid">
+    <div class="footer__about">
+      <div class="footer__brand">
+        <img src="assets/images/logo-square-300.png" alt="" width="36" height="36" loading="lazy" decoding="async">
+        <span>Pole Dance Studio</span>
       </div>
-      <!-- Features text -->
-      <div class="studio-features">
-        <div class="studio-feature" data-reveal="fade-up" data-reveal-delay="0">
-          <div class="studio-feature__icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="10" width="32" height="24" rx="4" stroke="currentColor" stroke-width="1.5"/><line x1="22" y1="10" x2="22" y2="34" stroke="currentColor" stroke-width="1" opacity=".5"/><circle cx="22" cy="6" r="3" stroke="currentColor" stroke-width="1.5"/></svg></div>
-          <h3>Espace lumineux</h3>
-          <p>3m15 de hauteur sous plafond, tapis et vestiaires.</p>
-        </div>
-        <div class="studio-feature" data-reveal="fade-up" data-reveal-delay="60">
-          <div class="studio-feature__icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="4" x2="22" y2="40" stroke="currentColor" stroke-width="2"/><circle cx="22" cy="18" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M16 30 l6-4 6 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></div>
-          <h3>5 barres X-Pole Pro</h3>
-          <p>Chrome + Powder Coated, système X-lock statique/spinning.</p>
-        </div>
-        <div class="studio-feature" data-reveal="fade-up" data-reveal-delay="120">
-          <div class="studio-feature__icon" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="14" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M10 36c0-6.6 5.4-12 12-12s12 5.4 12 12" stroke="currentColor" stroke-width="1.5"/></svg></div>
-          <h3>10 élèves max</h3>
-          <p>Un suivi personnalisé dans une ambiance conviviale.</p>
-        </div>
-      </div>
-      <!-- Gallery -->
-      <div class="studio-gallery" data-reveal="fade-up">
-        <div class="studio-gallery__img"><img src="assets/images/studio-parc-beauregard.jpg" alt="Le studio" width="480" height="360" loading="lazy" decoding="async"></div>
-        <div class="studio-gallery__img"><img src="assets/images/home-cours-pole-dance.jpg" alt="Cours en groupe" width="480" height="360" loading="lazy" decoding="async"></div>
-        <div class="studio-gallery__img"><img src="assets/images/amandine-portrait-ecole.jpg" alt="Amandine au studio" width="480" height="360" loading="lazy" decoding="async"></div>
-        <div class="studio-gallery__img"><img src="assets/images/amandine-portrait-home.jpg" alt="Pole en extérieur" width="480" height="360" loading="lazy" decoding="async"></div>
-      </div>
+      <p>Be strong, have fun. Force, grâce et confiance en soi.</p>
     </div>
-  </section>
-
-  <!-- DIVIDER -->
-  <div class="section-divider" data-reveal="scale-in">
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="8" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="20" r="2.5" fill="currentColor"/><line x1="20" y1="2" x2="20" y2="10" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="20" y1="30" x2="20" y2="38" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="2" y1="20" x2="10" y2="20" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="30" y1="20" x2="38" y2="20" stroke="currentColor" stroke-width="1" opacity=".5"/></svg>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="ecole.html">L'école</a></li>
+        <li><a href="planning.html">Planning &amp; tarifs</a></li>
+        <li><a href="stages.html">Stages &amp; camps</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:poledancetours37@gmail.com">poledancetours37@gmail.com</a></li>
+        <li><a href="tel:+33783118183">07 83 11 81 83</a></li>
+        <li><a href="https://instagram.com/poledancetours" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+    </div>
   </div>
-
-  <!-- ===================== LOCATION + MAP ===================== -->
-  <section>
-    <div class="container">
-      <div class="location-grid">
-        <div data-reveal="fade-up">
-          <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Nous trouver</span>
-          <h2 style="margin:20px 0 16px;">Venez nous <em>rencontrer</em></h2>
-          <p>Notre studio vous accueille dans un espace lumineux et dédié à la pratique de la pole dance.</p>
-          <p style="color:var(--text-dim); font-size:var(--small); margin-top:8px;">Tours, France <span style="opacity:.5;">— adresse complète sur demande</span></p>
-          <a class="btn btn--primary" href="contact.html" style="margin-top:16px;">Nous contacter</a>
-        </div>
-        <div class="location-map" data-reveal="fade-up" data-reveal-delay="120">
-          <div id="studio-map"></div>
-        </div>
-      </div>
+  <div class="footer__bottom">
+    <span>© 2026 Pole Dance Studio — Be Strong, Have Fun</span>
+    <div>
+      <a href="#">Mentions légales</a>
+      <a href="#">Cookies</a>
     </div>
-  </section>
-
-  <!-- DIVIDER -->
-  <div class="section-divider" data-reveal="scale-in">
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="8" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="20" r="2.5" fill="currentColor"/><line x1="20" y1="2" x2="20" y2="10" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="20" y1="30" x2="20" y2="38" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="2" y1="20" x2="10" y2="20" stroke="currentColor" stroke-width="1" opacity=".5"/><line x1="30" y1="20" x2="38" y2="20" stroke="currentColor" stroke-width="1" opacity=".5"/></svg>
   </div>
+</footer>
 
-  <!-- ===================== FAQ ===================== -->
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow" data-reveal="fade-up"><span class="dot" aria-hidden="true"></span> FAQ</span>
-        <h2 data-reveal="fade-up" data-reveal-delay="80">Questions <em>fréquentes</em></h2>
-      </div>
-      <div class="faq-list" data-reveal="fade-up">
-        <div class="faq-item">
-          <button class="faq-q">Est-ce que la pole dance est accessible aux débutant·es ?</button>
-          <div class="faq-a"><p>Absolument. Aucun prérequis nécessaire. Pas besoin d'être souple, forte ou sportive. On apprend et on progresse à son propre rythme.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Combien de personnes par cours ?</button>
-          <div class="faq-a"><p>Maximum 10 personnes pour garantir un vrai suivi personnalisé avec Amandine.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Comment réserver un cours ?</button>
-          <div class="faq-a"><p>Via notre plateforme de réservation en ligne. Crée un compte, choisis ton créneau et règle en ligne. Annulations 24h à l'avance.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Quels sont les bienfaits de la pole dance ?</button>
-          <div class="faq-a"><p>Confiance en soi, force, souplesse, endurance et coordination. Un mélange unique de danse, cirque et gymnastique — on se dépense en s'amusant.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== CTA BANNER ===================== -->
-  <section>
-    <div class="cta-banner" data-reveal="fade-up">
-      <h2>Envie de vivre <em>la pole</em> ?</h2>
-      <p>Rejoins-nous pour un premier cours à 15 €. Be strong, have fun.</p>
-      <a class="btn btn--primary" href="planning.html">Réserver mon 1er cours</a>
-    </div>
-  </section>
-
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="site-footer" data-reveal="fade-in">
-    <div class="footer-grid">
-      <div class="footer__about">
-        <div class="footer__brand">
-          <img src="assets/images/logo-square-300.png" alt="" width="36" height="36" loading="lazy" decoding="async">
-          <span>Pole Dance Studio</span>
-        </div>
-        <p>Découvrez la magie du pole dance. Fusion de la danse et du fitness, renforcement du corps et développement de la confiance.</p>
-      </div>
-      <div>
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="ecole.html">L'école</a></li>
-          <li><a href="planning.html">Planning &amp; tarifs</a></li>
-          <li><a href="stages.html">Stages &amp; camps</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:poledancetours37@gmail.com">poledancetours37@gmail.com</a></li>
-          <li><a href="tel:+33783118183">07 83 11 81 83</a></li>
-          <li>France</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Réseaux</h4>
-        <ul>
-          <li><a href="https://instagram.com/poledancetours" target="_blank" rel="noopener">Instagram</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <span>© 2026 Pole Dance Studio — Be Strong, Have Fun</span>
-      <div>
-        <a href="#">Mentions légales</a>
-        <a href="#">Cookies</a>
-        <a href="#">Vie privée</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="assets/js/main.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
